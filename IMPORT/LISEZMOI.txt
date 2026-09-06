@@ -1,0 +1,42 @@
+DOSSIER IMPORT — ton seul espace de travail
+===========================================
+
+1. Dépose ici ton export CSV. UN SEUL fichier, de chaque côté.
+
+      cTrader (forex)      l'export « relevé »
+      Tradovate (futures)  l'export « Orders »
+
+   Côté Tradovate, l'export Orders suffit : le programme refait
+   l'appariement des ordres remplis et retrouve exactement le découpage
+   d'Edgewonk, au centime. Le même fichier porte les brackets ATM.
+
+2. Lance « Journal de trading — sync » depuis Raycast.
+
+3. Réponds 1 (cTrader) ou 2 (Tradovate). C'est toi qui déclares : le
+   programme ne devine jamais le format d'un fichier.
+
+4. L'assistant crée ici un fichier sltp_....csv. Trois colonnes à remplir :
+
+      sl           le stop INITIAL, celui posé à l'entrée
+      tp           la cible INITIALE
+      management   OK = je n'ai touché à rien, le plan a été tenu
+                   KO = j'ai bougé mon stop ou ma cible après l'entrée
+
+   Une ligne par POSITION : si elle est sortie en plusieurs fois, tu ne
+   remplis qu'une fois, la valeur est appliquée à chaque sortie.
+
+   Côté Tradovate, sl et tp arrivent DÉJÀ REMPLIS pour les entrées passées
+   à l'ATM — à relire, pas à ressaisir. Les entrées posées au graphique
+   (tout ce qui est antérieur au 18/08/2026) arrivent vides : l'export ne
+   porte pas leur protection. Si tu ne t'en souviens pas, LAISSE VIDE.
+   Un stop retrouvé de mémoire n'est pas imprécis, il est inventé.
+
+   Une case management vide BLOQUE l'intégration : contrairement au stop,
+   qu'un R aberrant trahit, ce jugement-là ne se retrouve pas après coup.
+
+   Enregistre, et reviens dans le terminal.
+
+5. À la fin, l'assistant range tout seul. Ce dossier redevient vide.
+
+Ne mets rien d'autre ici. Un seul jeu d'exports à la fois.
+Les exports déjà traités partent dans _traites/.

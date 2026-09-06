@@ -1,0 +1,24 @@
+# Environnement — reconstructible : python3 -m venv .venv && .venv/bin/pip install -r requirements.txt
+.venv/
+__pycache__/
+*.pyc
+
+# macOS
+.DS_Store
+
+# Rebuts
+*.bak-*
+_to_delete/
+
+# ── DONNÉES PERSONNELLES ────────────────────────────────────────────────
+# Rien de ce que produit ou consomme la chaîne n'est versionné : exports de
+# broker, base de trades, saisies, snapshots du journal, graphiques, cache de
+# bougies. Seuls les fichiers *.exemple.csv (en-têtes seuls) le sont.
+donnees/**
+!donnees/**/
+!donnees/**/*.exemple.csv
+!donnees/*.exemple.csv
+!donnees/**/.gitkeep
+
+IMPORT/*.csv
+IMPORT/_traites/
